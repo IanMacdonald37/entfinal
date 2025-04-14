@@ -8,7 +8,7 @@ public class App
 
     private final String message = "ACIT 4850 Hello World!";
 
-    public App) {}
+    public App() {}
 
     public static void main(String[] args) {
         if (args.length == 1) {
