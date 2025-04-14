@@ -24,7 +24,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Starting Java Build..." 
-                sh "ls -l"
                 sh 'mvn -B -DskipTests clean install'
                 echo "Java Build Complete."
             }
@@ -40,6 +39,9 @@ pipeline {
                 For the Code Quantity Stage, you can use the "wc -l" command to get the number of 
                 lines in a file. You may want to Google this command or use the Linux man pages.
                 */
+
+                sh "wc -l ./main/java/com/mycompany/app/App.java"
+
                 script{
                     def files = findFiles()
                     for (file in files) {
@@ -84,7 +86,7 @@ pipeline {
         stage('Build Results') {
             steps {
                 echo "Build ${params.BUILD_TYPE} completed successfully"
-                echo "I have no completed ACIT 4850!"
+                echo "I have now completed ACIT 4850!"
             }
         }
     }
