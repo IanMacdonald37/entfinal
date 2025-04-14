@@ -40,7 +40,7 @@ pipeline {
                 lines in a file. You may want to Google this command or use the Linux man pages.
                 */
 
-                sh "wc -l ./main/java/com/mycompany/app/App.java"
+                sh "wc -l ./src/main/java/com/mycompany/app/App.java"
 
                 script{
                     def files = findFiles()
